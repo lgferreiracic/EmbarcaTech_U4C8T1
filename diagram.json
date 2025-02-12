@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "Lucas Gabriel Ferreira",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": -3.25, "left": 3.55, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -29.4,
+      "left": -141,
+      "rotate": 90,
+      "attrs": { "color": "black" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 233.54,
+      "left": -114.97,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 183.16, "left": -124.8, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 71.2,
+      "left": -142.9,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -96.6,
+      "left": 101.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 119.15,
+      "left": -76.8,
+      "attrs": { "value": "330" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP5", "btn1:2.r", "green", [ "h-124.8", "v-32.05", "h0.2" ] ],
+    [ "pico:GND.1", "btn1:1.r", "black", [ "h-15.65", "v-12.85" ] ],
+    [ "oled1:VCC", "vcc1:VCC", "red", [ "v0" ] ],
+    [ "oled1:GND", "pico:GND.4", "black", [ "v0" ] ],
+    [ "oled1:SCL", "pico:GP15", "green", [ "v0" ] ],
+    [ "oled1:SDA", "pico:GP14", "blue", [ "v0" ] ],
+    [ "pico:3V3", "joystick1:VCC", "magenta", [ "h57.91", "v0", "h38.4" ] ],
+    [ "joystick1:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "joystick1:SEL", "pico:GP22", "gray", [ "v0" ] ],
+    [ "joystick1:HORZ", "pico:GP26", "gold", [ "v0" ] ],
+    [ "joystick1:VERT", "pico:GP27", "orange", [ "v0" ] ],
+    [ "pico:GP11", "rgb1:G", "green", [ "h0" ] ],
+    [ "pico:GP12", "rgb1:B", "blue", [ "h0" ] ],
+    [ "pico:GP13", "rgb1:R", "red", [ "h0" ] ],
+    [ "r1:2", "pico:GND.3", "black", [ "v0" ] ],
+    [ "r1:1", "rgb1:COM", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
