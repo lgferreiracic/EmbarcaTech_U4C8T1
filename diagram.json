@@ -30,8 +30,9 @@
     {
       "type": "wokwi-analog-joystick",
       "id": "joystick1",
-      "top": -96.6,
-      "left": 101.4,
+      "top": -89.5,
+      "left": 177.1,
+      "rotate": 90,
       "attrs": {}
     },
     {
@@ -49,11 +50,11 @@
     [ "oled1:GND", "pico:GND.4", "black", [ "v0" ] ],
     [ "oled1:SCL", "pico:GP15", "green", [ "v0" ] ],
     [ "oled1:SDA", "pico:GP14", "blue", [ "v0" ] ],
-    [ "pico:3V3", "joystick1:VCC", "magenta", [ "h57.91", "v0", "h38.4" ] ],
-    [ "joystick1:GND", "pico:GND.5", "black", [ "v0" ] ],
-    [ "joystick1:SEL", "pico:GP22", "gray", [ "v0" ] ],
-    [ "joystick1:HORZ", "pico:GP26", "gold", [ "v0" ] ],
-    [ "joystick1:VERT", "pico:GP27", "orange", [ "v0" ] ],
+    [ "pico:3V3", "joystick1:VCC", "magenta", [ "h48.31", "v-96" ] ],
+    [ "joystick1:GND", "pico:GND.5", "black", [ "h-9.6", "v182.36" ] ],
+    [ "joystick1:SEL", "pico:GP22", "gray", [ "h-19.2", "v134.4" ] ],
+    [ "joystick1:HORZ", "pico:GP26", "gold", [ "h-28.8", "v124.8" ] ],
+    [ "joystick1:VERT", "pico:GP27", "orange", [ "h-38.4", "v124.8" ] ],
     [ "pico:GP11", "rgb1:G", "green", [ "h0" ] ],
     [ "pico:GP12", "rgb1:B", "blue", [ "h0" ] ],
     [ "pico:GP13", "rgb1:R", "red", [ "h0" ] ],
