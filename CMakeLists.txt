@@ -56,10 +56,8 @@ target_include_directories(EmbarcaTech_U4C8T1 PRIVATE
 # Add any user requested libraries
 target_link_libraries(EmbarcaTech_U4C8T1 
             hardware_i2c
-            hardware_timer
             hardware_adc
-            hardware_clocks
-            hardware_uart
+            hardware_pwm
         )
 
 pico_add_extra_outputs(EmbarcaTech_U4C8T1)
