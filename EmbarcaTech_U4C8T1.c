@@ -34,8 +34,8 @@ volatile bool pwm_state = true; // Variável para controle do estado do PWM
 
 // Função para debounce dos botões
 bool debounce(volatile uint32_t *last_time){
-    uint32_t current_time = to_us_since_boot(get_absolute_time());
-    if (current_time - *last_time > 200000){ 
+    uint32_t current_time = to_ms_since_boot(get_absolute_time());
+    if (current_time - *last_time > 250){ 
         *last_time = current_time;
         return true;
     }
@@ -145,8 +145,8 @@ void control_red_led_with_pwm(uint16_t x_value){
 
 // Função para movimentação do quadrado no display OLED
 void joystic_movimentation(ssd1306_t *ssd, uint16_t x_value, uint16_t y_value){
-    static uint8_t square_x;
-    static uint8_t square_y;
+    static uint16_t square_x;
+    static uint16_t square_y;
 
     square_x = (x_value * SSD1306_WIDTH) / 4095; // Calcula a posição do quadrado no eixo x
     square_y = SSD1306_HEIGHT - ((y_value * SSD1306_HEIGHT) / 4095); // Calcula a posição do quadrado no eixo y
